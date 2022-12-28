@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:myapp/src/teta_files/imports.dart';
-import 'package:myapp/constants.dart' as constantz;
 import 'package:myapp/auth/auth_state.dart';
 
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';

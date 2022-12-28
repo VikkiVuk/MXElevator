@@ -1,5 +1,6 @@
 import 'package:hive/hive.dart';
 import 'package:myapp/src/teta_files/imports.dart';
+import 'package:myapp/src/teta_files/teta_theme.dart';
 
 //false = dark_mode
 //true = light mode
@@ -28,6 +29,6 @@ class ThemeCubit extends Cubit<bool> {
   }
 
   Color getColor(String key) => state
-        ? TetaThemes.lightTheme[key] as Color
-        : TetaThemes.darkTheme[key] as Color;
+      ? TetaThemes.lightTheme[key] as Color
+      : TetaThemes.darkTheme[key] as Color;
 }

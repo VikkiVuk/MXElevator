@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:myapp/src/teta_files/imports.dart';
-import 'package:myapp/constants.dart' as constantz;
 import 'package:myapp/auth/auth_state.dart';
 
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
@@ -9,11 +8,9 @@ class PageSecondStage extends StatefulWidget {
   const PageSecondStage({
     Key? key,
     this.requiredClicks = 0,
-    this.requiredClicks2 = 0,
   }) : super(key: key);
 
-  final double requiredClicks;
-  final int requiredClicks2;
+  final int requiredClicks;
 
   @override
   _StateSecondStage createState() => _StateSecondStage();
@@ -21,7 +18,7 @@ class PageSecondStage extends StatefulWidget {
 
 class _StateSecondStage extends AuthState<PageSecondStage>
     with SingleTickerProviderStateMixin {
-  double clicks = 0;
+  int clicks = 0;
 
   var datasets = <String, dynamic>{};
   int index = 0;
@@ -60,7 +57,7 @@ class _StateSecondStage extends AuthState<PageSecondStage>
             AnimationConfiguration.staggeredGrid(
               columnCount: 2,
               position: 0,
-              duration: Duration(
+              duration: const Duration(
                 milliseconds: 700,
               ),
               child: SlideAnimation(
@@ -87,7 +84,7 @@ class _StateSecondStage extends AuthState<PageSecondStage>
                     ),
                   ),
                   child: GridView(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       mainAxisSpacing: 1,
                       crossAxisCount: 1,
                       crossAxisSpacing: 2,
@@ -100,10 +97,10 @@ class _StateSecondStage extends AuthState<PageSecondStage>
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                              ''''${clicks}'  '/'  ${widget.requiredClicks} ''',
+                              ''''$clicks'  '/'  ${widget.requiredClicks} ''',
                               style: GoogleFonts.poppins(
                                 textStyle: TextStyle(
-                                  color: Color(0xFF7E7E7E).withOpacity(1),
+                                  color: const Color(0xFF7E7E7E).withOpacity(1),
                                   fontWeight: FontWeight.w400,
                                   fontSize: 20,
                                   fontStyle: FontStyle.normal,
@@ -142,8 +139,8 @@ class _StateSecondStage extends AuthState<PageSecondStage>
                             ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const SizedBox(),
+                              children: const [
+                                SizedBox(),
                               ],
                             ),
                           ),
